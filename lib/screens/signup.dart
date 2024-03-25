@@ -1,12 +1,12 @@
-import 'package:childapp/doctor_vertifcation_form.dart';
+import 'package:childapp/screens/login.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class SignupScreen extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupScreenState extends State<SignupScreen> {
   bool _isObscure3 = true;
   bool visible = false;
   final _formkey = GlobalKey<FormState>();
@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
           automaticallyImplyLeading: false,
           backgroundColor: Colors.pink.shade200,
           title: const Text(
-            "Login Panel",
+            "SignUp Panel",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
           ),
           centerTitle: true,
@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: const Text(
-                              "Login Now !",
+                              "SignUp Now !",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -150,16 +150,16 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => PersonalInfo()));
+                              setState(() {
+                                visible = true;
+                              });
                             },
                             // : null,
                             style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.symmetric(
                                   vertical: 13,
                                   horizontal:
-                                      50), // Increase padding to increase width
-                              primary: Colors.pink.shade200, // Background color
+                                      50), backgroundColor: Colors.pink.shade200, // Background color
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(
                                     18), // Rounded corners
@@ -168,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             child: Text(
-                              "Login",
+                              "Signup",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.bold),
                             ),
@@ -194,9 +194,12 @@ class _LoginPageState extends State<LoginPage> {
                               Text("Didn't have an account!  ",
                                   style: TextStyle(fontSize: 20)),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
+                                },
                                 child: Text(
-                                  "Register",
+                                  "login",
                                   style: TextStyle(
                                       color: Colors.red.shade900,
                                       fontSize: 22,

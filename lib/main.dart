@@ -1,6 +1,7 @@
-import 'package:childapp/pediatrician.dart';
-import 'package:childapp/signup.dart';
+import 'package:childapp/screens/pediatrician.dart';
+import 'package:childapp/screens/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: SignupScreen(),
     );
   }

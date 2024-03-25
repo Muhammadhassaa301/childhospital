@@ -1,4 +1,5 @@
-import 'package:childapp/pediatrician.dart';
+import 'package:childapp/screens/bottombar_screen.dart';
+import 'package:childapp/screens/pediatrician.dart';
 import 'package:flutter/material.dart';
 
 class PersonalInfo extends StatefulWidget {
@@ -539,7 +540,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     width: 350,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.pink.shade200,
+                        backgroundColor: Colors.pink.shade200,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -547,7 +548,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       onPressed: () {
                         setState(() {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => PediatricianScreen()));
+                              builder: (context) => DoctorDashboard()));
                         });
                       },
                       child: const Text(
